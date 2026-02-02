@@ -1,54 +1,22 @@
 <html>
-	<p>Hello This is your chat for US</p>
+	<body><script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-    
-    <button type="button" onclick="showChat()">Show Chat</button>
-    <button type="button" onclick="hideChat()">Hide Chat</button>
-
-    <script type='text/javascript'>
-        function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'en_US';
-
-                // Setting this to true hides the button by default on load
-                embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true; 
-
-                embeddedservice_bootstrap.init(
-                    '00DWE00000F8rHp',
-                    'Chat_LATAM_MX_Support',
-                    'https://3m1--train.sandbox.my.site.com/ESWChatLATAMMXSupport1765545897737',
-                    {
-                        scrt2URL: 'https://3m1--train.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
-            }
-        };
-
-        window.addEventListener("onEmbeddedMessagingReady", e => {
-            console.log("onEmbeddedMessagingReady event triggered");
-            
-            // Set Hidden Prechat Fields
-            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
-                "_subject" : "Chat_LATAM_MX_Support",
-                "QueueId__c" : "Chat_LATAM_MX_Support"
-            });
-        });
-
-        // Helper functions to control visibility
-        function hideChat() {
-            console.log("Hiding chat button...");
-            embeddedservice_bootstrap.utilAPI.hideChatButton();
-        }
-
-        function showChat() {
-            console.log("Showing chat button...");
-            embeddedservice_bootstrap.utilAPI.showChatButton();
-        }
-    </script>
-    
-    <script type='text/javascript' src='https://3m1--train.sandbox.my.site.com/ESWChatLATAMMXSupport1765545897737/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-
-
+			embeddedservice_bootstrap.init(
+				'00DWE00000F8rHp',
+				'Chat_US_Test',
+				'https://3m1--train.sandbox.my.site.com/ESWChatUSTest1770022918719',
+				{
+					scrt2URL: 'https://3m1--train.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://3m1--train.sandbox.my.site.com/ESWChatUSTest1770022918719/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+<body>
 </html>
